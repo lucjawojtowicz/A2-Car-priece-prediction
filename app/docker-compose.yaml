@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  web-st127262:
+    image: lucjawojtowicz/car-price-app:latest
+    container_name: st127262-web
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.web-st127262.rule=Host(`web-st127262.ml.brain.cs.ait.ac.th`)"
+      - "traefik.http.routers.web-st127262.entrypoints=websecure"
+      - "traefik.http.routers.web-st127262.tls.certresolver=myresolver"
+      - "traefik.http.services.web-st127262.loadbalancer.server.port=8000"
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    external: true
