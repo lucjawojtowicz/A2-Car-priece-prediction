@@ -84,8 +84,6 @@ docker run -p 8000:8000 car-price-app
 ### Live deployment
 Deployed at: https://web-st127262.ml.brain.cs.ait.ac.th/
 
-*(update this link once deployed to the ml-brain server)*
-
 ## Dataset
 
 Car Dekho used car listings dataset (same as A1): `name`, `year`,
